@@ -10,7 +10,7 @@ namespace EntityCodeFirstTests.Models
     public class MyDbContext:DbContext
     {
 
-        public DbSet<customer> Customer { get; set; }
+        public DbSet<customers> Customer { get; set; }
         public MyDbContext()
         {
 

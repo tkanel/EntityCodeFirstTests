@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -144,6 +145,14 @@
     <Compile Include="Migrations\201806291040213_AddMembershipType.cs" />
     <Compile Include="Migrations\201806291040213_AddMembershipType.Designer.cs">
       <DependentUpon>201806291040213_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806291140302_PopulateMembershiptypes.cs" />
+    <Compile Include="Migrations\201806291140302_PopulateMembershiptypes.Designer.cs">
+      <DependentUpon>201806291140302_PopulateMembershiptypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806291228576_ApplyAnnotationsToCustomer.cs" />
+    <Compile Include="Migrations\201806291228576_ApplyAnnotationsToCustomer.Designer.cs">
+      <DependentUpon>201806291228576_ApplyAnnotationsToCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\customer.cs" />
@@ -200,6 +209,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -222,6 +233,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806291040213_AddMembershipType.resx">
       <DependentUpon>201806291040213_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806291140302_PopulateMembershiptypes.resx">
+      <DependentUpon>201806291140302_PopulateMembershiptypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806291228576_ApplyAnnotationsToCustomer.resx">
+      <DependentUpon>201806291228576_ApplyAnnotationsToCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

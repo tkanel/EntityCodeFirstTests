@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EntityCodeFirstTests.Models.customers>
+    
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customers</h2>
+
+
+@using (Html.BeginForm("Index", "Customer", FormMethod.Post))
+    
+{
+
+    <table class="table table stripped">
+
+        <thead>
+            <tr>
+
+                <th>Name</th>
+                <th>Is subscribed</th>
+                <th>Discount</th>
+                <th>Duration in months</th>
+                <th>Signup fee</th>
+                
+
+
+            </tr>
+            
+
+        </thead>
+
+        <tbody>
+    @foreach (var customer in Model)
+    {
+        <tr>
+
+
+            <td>@Html.ActionLink(customer.Name, "Details",new {customer.Id })</td>
+            <td>@customer.IsSubscribedToNewletter </td>
+            <td>@customer.MembershipType.DiscountRate%</td>
+            <td>@customer.MembershipType.DurationInMonths</td>
+            <td>@customer.MembershipType.SignUpfee</td>
+
+
+        </tr>
+
+    }
+
+    </tbody>
+
+
+
+    </table>
+
+
+
+
+
+}
