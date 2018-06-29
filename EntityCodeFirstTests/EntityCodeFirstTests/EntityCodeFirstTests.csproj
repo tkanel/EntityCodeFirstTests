@@ -154,6 +154,26 @@
     <Compile Include="Migrations\201806291228576_ApplyAnnotationsToCustomer.Designer.cs">
       <DependentUpon>201806291228576_ApplyAnnotationsToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806292122382_AddMembershipTypeName.cs" />
+    <Compile Include="Migrations\201806292122382_AddMembershipTypeName.Designer.cs">
+      <DependentUpon>201806292122382_AddMembershipTypeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806292124237_PopulateMembershipTypeName.cs" />
+    <Compile Include="Migrations\201806292124237_PopulateMembershipTypeName.Designer.cs">
+      <DependentUpon>201806292124237_PopulateMembershipTypeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806292137414_MembershipTypeNameToCustomer.cs" />
+    <Compile Include="Migrations\201806292137414_MembershipTypeNameToCustomer.Designer.cs">
+      <DependentUpon>201806292137414_MembershipTypeNameToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806292139537_MembershipTypeNameToCustomer1.cs" />
+    <Compile Include="Migrations\201806292139537_MembershipTypeNameToCustomer1.Designer.cs">
+      <DependentUpon>201806292139537_MembershipTypeNameToCustomer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806292222139_RemoveMembershipTypeNameFromCustomerModel.cs" />
+    <Compile Include="Migrations\201806292222139_RemoveMembershipTypeNameFromCustomerModel.Designer.cs">
+      <DependentUpon>201806292222139_RemoveMembershipTypeNameFromCustomerModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -239,6 +259,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806291228576_ApplyAnnotationsToCustomer.resx">
       <DependentUpon>201806291228576_ApplyAnnotationsToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806292122382_AddMembershipTypeName.resx">
+      <DependentUpon>201806292122382_AddMembershipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806292124237_PopulateMembershipTypeName.resx">
+      <DependentUpon>201806292124237_PopulateMembershipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806292137414_MembershipTypeNameToCustomer.resx">
+      <DependentUpon>201806292137414_MembershipTypeNameToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806292139537_MembershipTypeNameToCustomer1.resx">
+      <DependentUpon>201806292139537_MembershipTypeNameToCustomer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806292222139_RemoveMembershipTypeNameFromCustomerModel.resx">
+      <DependentUpon>201806292222139_RemoveMembershipTypeNameFromCustomerModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

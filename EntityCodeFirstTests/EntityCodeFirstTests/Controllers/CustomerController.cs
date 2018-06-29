@@ -36,6 +36,7 @@ namespace EntityCodeFirstTests.Controllers
             return View(customers);
         }
 
+      
         public ActionResult Details(int id)
         {
 
