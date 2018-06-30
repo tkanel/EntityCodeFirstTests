@@ -11,6 +11,7 @@ namespace EntityCodeFirstTests.Models
     {
 
         public DbSet<customers> Customer { get; set; }
+        public DbSet<Movie> Movie { get; set; }
         public MyDbContext()
         {
 

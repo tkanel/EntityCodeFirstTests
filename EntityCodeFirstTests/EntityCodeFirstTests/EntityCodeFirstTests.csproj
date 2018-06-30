@@ -51,11 +51,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -131,6 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,9 +175,31 @@
     <Compile Include="Migrations\201806292222139_RemoveMembershipTypeNameFromCustomerModel.Designer.cs">
       <DependentUpon>201806292222139_RemoveMembershipTypeNameFromCustomerModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806301922011_AddBirthDateToCustomer.cs" />
+    <Compile Include="Migrations\201806301922011_AddBirthDateToCustomer.Designer.cs">
+      <DependentUpon>201806301922011_AddBirthDateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806301946243_AddBirthDateToCustomerUpdateNullable.cs" />
+    <Compile Include="Migrations\201806301946243_AddBirthDateToCustomerUpdateNullable.Designer.cs">
+      <DependentUpon>201806301946243_AddBirthDateToCustomerUpdateNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806302057365_AddMovieAndGenreModel.cs" />
+    <Compile Include="Migrations\201806302057365_AddMovieAndGenreModel.Designer.cs">
+      <DependentUpon>201806302057365_AddMovieAndGenreModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806302130435_GenresUpdate.cs" />
+    <Compile Include="Migrations\201806302130435_GenresUpdate.Designer.cs">
+      <DependentUpon>201806302130435_GenresUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806302131401_PopulateGenresData.cs" />
+    <Compile Include="Migrations\201806302131401_PopulateGenresData.Designer.cs">
+      <DependentUpon>201806302131401_PopulateGenresData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -231,6 +254,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Movies\Create.cshtml" />
+    <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\Edit.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,6 +302,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806292222139_RemoveMembershipTypeNameFromCustomerModel.resx">
       <DependentUpon>201806292222139_RemoveMembershipTypeNameFromCustomerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806301922011_AddBirthDateToCustomer.resx">
+      <DependentUpon>201806301922011_AddBirthDateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806301946243_AddBirthDateToCustomerUpdateNullable.resx">
+      <DependentUpon>201806301946243_AddBirthDateToCustomerUpdateNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806302057365_AddMovieAndGenreModel.resx">
+      <DependentUpon>201806302057365_AddMovieAndGenreModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806302130435_GenresUpdate.resx">
+      <DependentUpon>201806302130435_GenresUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806302131401_PopulateGenresData.resx">
+      <DependentUpon>201806302131401_PopulateGenresData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

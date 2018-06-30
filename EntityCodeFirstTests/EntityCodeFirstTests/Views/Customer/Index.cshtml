@@ -20,6 +20,7 @@
                 <th>Name</th>
                 <th>Subscription Type</th>
                 <th>Subscribed to Newsletter</th>
+                <th>Birthdate</th>
                 <th>Discount(%)</th>
                 <th>Duration in Months</th>
                 <th>Signup Fee</th>
@@ -40,9 +41,20 @@
             <td>@Html.ActionLink(customer.Name, "Details",new {customer.Id })</td>
             <td>@customer.MembershipType.MembershipTypeName</td>
             <td>@customer.IsSubscribedToNewletter </td>
+            @if (customer.BirthDate.HasValue)
+            {
+                <td>@customer.BirthDate.Value.ToShortDateString()</td>
+            }
+            else
+            {
+                <td>N/A</td>
+            }
             <td>@customer.MembershipType.DiscountRate%</td>
             <td>@customer.MembershipType.DurationInMonths</td>
             <td>@customer.MembershipType.SignUpfee</td>
+          
+            
+            
 
 
         </tr>

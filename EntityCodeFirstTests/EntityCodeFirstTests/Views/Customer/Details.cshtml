@@ -17,6 +17,7 @@
             <th>Name</th>
             <th>Subscription Type</th>
             <th>Subscribed to Newsletter</th>
+            <th>Birthdate</th>
             <th>Discount(%)</th>
             <th>Duration in Months</th>
             <th>Signup Fee</th>
@@ -34,11 +35,19 @@
 
 
             <td>@Model.Name</td>
-            <td>@*@Model.MembershipType.MembershipTypeName*@</td>
+            <td>@Model.MembershipType.MembershipTypeName</td>
             <td>@Model.IsSubscribedToNewletter </td>
-            @*<td>@Model.MembershipType.DiscountRate%</td>
+            @if (Model.BirthDate.HasValue)
+            {
+                <td>@Model.BirthDate.Value.ToShortDateString()</td>
+            }
+            else
+            {
+                <td>N/A</td>
+            }
+            <td>@Model.MembershipType.DiscountRate%</td>
             <td>@Model.MembershipType.DurationInMonths</td>
-            <td>@Model.MembershipType.SignUpfee</td>*@
+            <td>@Model.MembershipType.SignUpfee</td>
 
 
         </tr>

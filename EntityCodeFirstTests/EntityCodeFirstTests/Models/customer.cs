@@ -17,10 +17,12 @@ namespace EntityCodeFirstTests.Models
 
         public bool IsSubscribedToNewletter { get; set; }
 
+        [DataType(DataType.Date)]
+        public  DateTime? BirthDate { get; set; }
         public MembershipType MembershipType { get; set; }
         public byte MembershipTypeId { get; set; }
 
-        //public MembershipType MembershipTypeName { get; set; }
+        
            
         
     }
