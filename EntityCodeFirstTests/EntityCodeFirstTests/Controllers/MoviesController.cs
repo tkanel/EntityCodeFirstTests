@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EntityCodeFirstTests.Models;
+using EntityCodeFirstTests.ViewModels;
 
 namespace EntityCodeFirstTests.Controllers
 {
@@ -38,7 +39,18 @@ namespace EntityCodeFirstTests.Controllers
         // GET: Movies/Create
         public ActionResult Create()
         {
-            return View();
+
+            var GenreTypes = db.Genre.ToList();
+            var ViewModel = new NewMovieViewModel()
+            {
+
+                Genres = GenreTypes
+
+
+            };
+
+
+            return View(GenreTypes);
         }
 
         // POST: Movies/Create
@@ -50,8 +62,19 @@ namespace EntityCodeFirstTests.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Movie.Add(movie);
-                db.SaveChanges();
+
+                try
+                {
+                    db.Movie.Add(movie);
+                    db.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    ViewBag.ErrorSavingMovie = ex;
+
+                }
+
+
                 return RedirectToAction("Index");
             }
 
