@@ -40,17 +40,11 @@ namespace EntityCodeFirstTests.Controllers
         public ActionResult Create()
         {
 
-            var GenreTypes = db.Genre.ToList();
-            var ViewModel = new NewMovieViewModel()
-            {
-
-                Genres = GenreTypes
+            ViewBag.GenreTypes = new SelectList(db.Genre,"Id","GenreName","1");
+           
 
 
-            };
-
-
-            return View(GenreTypes);
+            return View();
         }
 
         // POST: Movies/Create
@@ -58,7 +52,7 @@ namespace EntityCodeFirstTests.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,MovieName,ReleaseDate,DateAdded,NumberInStock,GenreName")] Movie movie)
+        public ActionResult Create([Bind(Include = "Id,MovieName,ReleaseDate,DateAdded,NumberInStock,Genre_Id")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -67,15 +61,16 @@ namespace EntityCodeFirstTests.Controllers
                 {
                     db.Movie.Add(movie);
                     db.SaveChanges();
+                    return RedirectToAction("Index");
                 }
                 catch(Exception ex)
                 {
                     ViewBag.ErrorSavingMovie = ex;
-
+                    return View();
                 }
 
 
-                return RedirectToAction("Index");
+                
             }
 
             return View(movie);
