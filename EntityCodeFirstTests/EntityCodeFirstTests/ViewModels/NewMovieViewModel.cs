@@ -10,9 +10,9 @@ namespace EntityCodeFirstTests.ViewModels
     {
 
 
-        public IEnumerable<Genre> Genres { get; set; }
+        public IEnumerable<Genre> GenresList { get; set; }
 
-        public Movie Movies { get; set; }
+        public Movie MoviesList { get; set; }
 
 
     }
